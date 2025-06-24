@@ -1,18 +1,25 @@
-# _ = input(" ")
-# t_array = input(" ")
-# a = input(" ")
-# b = input(" ")
+_ = input(" ")
+t_array = input(" ").split(" ")
+a = input(" ").split(" ")
+b = input(" ").split(" ")
 
-t_array = "1 5 3"
-a = "3 1"
-b = "5 7"
 
-t_array = list(t_array)
+a_b = set(a+b)
 a = set(a)
 b = set(b)
-# l_a = len(a & t_array)
-# l_b = len(b & t_array)
-# print(l_a - l_b)
+f_set = ((a_b & set(t_array)) ^ a & b)
 
+n_array = list()
 for i in t_array:
-    print(i)
+    if i in f_set:
+        n_array.append(i)        
+
+
+d_array = dict()
+for i in n_array:
+    d_array[i] = d_array.setdefault(i, 0) +1
+
+for i in b:
+    d_array[i] = d_array.get(i, 0) *-1
+
+print(sum(d_array.values()))
