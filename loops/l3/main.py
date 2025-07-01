@@ -1,8 +1,8 @@
 if __name__ == '__main__':
-    x = input()
-    y = input()
-    z = input()
-    n = input()
+    x = int(input())
+    y = int(input())
+    z = int(input())
+    n = int(input())
 
     perm_list = []
     for i in range(x + 1):
