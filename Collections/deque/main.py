@@ -1,9 +1,7 @@
 from collections import deque
 
 items = int(input())
-
 de = deque()
-
 for i in range(items):    
     func = input().split()     
     if len(func) != 1:
