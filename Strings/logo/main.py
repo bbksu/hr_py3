@@ -1,3 +1,6 @@
+from math import log
+
+
 def logo(standard):
     length = standard * standard
     letter = "H"
@@ -22,7 +25,7 @@ def logo(standard):
         letters = f"{letters:^{max_width_size + standard}}"
         letter_row.append(letters)
     letter_row = "\n".join(letter_row)
-    print(letter_row)
+    print(letter_row)    
     center_shift = len(max_width) + (max_shift - len(letter_stack))
     extend = (standard + 1) // 2
     mid_range = ((length + 1) // 2) - (extend - 1) // 2
@@ -35,9 +38,7 @@ def logo(standard):
     for i in tips:
         print(f"{i.replace(' ', ''):^{standard * 10}}")
 
-
+    
 if __name__ == '__main__':
-    # logo(int(input()))
-    logo(7)
-    print()
-    logo(5)
+    logo(int(input()))
+    
